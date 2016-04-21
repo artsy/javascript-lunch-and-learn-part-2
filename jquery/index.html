@@ -1,0 +1,25 @@
+<html>
+  <body>
+    <h2>Hello 2005</h2>
+    <div id='container'>
+    </div>
+    <div id='scripts'>
+    <!-- Add some script tags to include jQuery & lodash -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.11.1/lodash.min.js"></script>
+    <!-- Embed some "app-level" Javascript to render -->
+    <script type="text/javascript">
+      $(function() {
+        $.ajax('https://api.artsy.net/api/v1/system/up').then(function(data) {
+          _.forEach(data, function (up, service) {
+            $('#container').append(
+              'Is ' + _.capitalize(service) + ' alive? ' +
+              (up ? 'Yes' : 'No') + '<br><br>'
+            )
+          })
+        })
+      })
+    </script>
+    </div>
+  </body>
+</html>

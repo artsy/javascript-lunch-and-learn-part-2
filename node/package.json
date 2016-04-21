@@ -1,0 +1,18 @@
+{
+  "name": "node-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "helloserver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nonblocking": "node nonblocking.js",
+    "blocking": "ruby blocking.rb",
+    "ping": "for i in `seq 1 100`; do curl http://localhost:5000 & done; wait"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "lodash": "^4.11.1"
+  }
+}
